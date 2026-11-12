@@ -24,3 +24,145 @@ body.invite-open .cover{display:none}
 .countdown div{background:rgba(255,253,248,.82);border-color:#d8c39d}.countdown strong{color:#9b7a45}
 .gold-button{background:linear-gradient(120deg,#b9955c,#e8d7b6,#c2a066);color:#fffdf8}
 @media(max-width:600px){body::before{background-position:48% center}.screen{padding:25px 15px}}
+
+
+/* ===== Visual Update 1: unified photo background + champagne typography ===== */
+:root{
+  --cream:#f2dfc4;
+  --paper:rgba(42,27,21,.76);
+  --gold:#d9b477;
+  --gold-light:#f0d5a2;
+  --ink:#f4e5ca;
+  --rose:#c98f85;
+  --champagne:#e3bf80;
+}
+html,body{
+  min-height:100%;
+  background:#241812;
+  color:#f2dfc4;
+}
+body{
+  font-family:Amiri,serif;
+  background:transparent;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:url('assets/couple-background.jpg') center 42%/cover no-repeat;
+  transform:scale(1.015);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(35,21,15,.22) 0%,rgba(39,24,18,.40) 40%,rgba(35,20,15,.78) 100%),
+    linear-gradient(90deg,rgba(54,34,23,.18),rgba(34,22,17,.22));
+  pointer-events:none;
+}
+.screen{
+  background:transparent!important;
+  color:#f2dfc4;
+}
+.cover{
+  background:linear-gradient(180deg,rgba(39,24,18,.22),rgba(35,20,15,.72))!important;
+}
+.cover-frame{
+  background:rgba(43,28,21,.40);
+  border-color:rgba(232,195,133,.82);
+  outline-color:rgba(232,195,133,.46);
+  backdrop-filter:blur(2px);
+}
+.sparkle,.basmala{color:#f0d5a2}
+.cover-caption{
+  color:#f0dfc3;
+  font:clamp(21px,3vw,27px) Amiri,serif;
+}
+.hero{
+  background:transparent!important;
+  color:#f2dfc4;
+}
+.hero-overlay{
+  background:linear-gradient(180deg,rgba(37,23,17,.30),rgba(43,27,19,.18) 42%,rgba(36,21,15,.72))!important;
+}
+.hero-content{text-shadow:0 2px 12px rgba(20,11,7,.62)}
+.blessing{
+  color:#f0d5a2;
+  font-family:Amiri,serif;
+  text-shadow:0 2px 9px rgba(25,13,8,.75);
+}
+.duaa{
+  color:#f5e7cf;
+  font-family:Amiri,serif;
+  text-shadow:0 2px 8px rgba(25,13,8,.8);
+}
+.couple span{
+  color:#e8c58d;
+  text-shadow:0 2px 10px rgba(20,10,5,.8);
+}
+.couple b{color:#f0c77e}
+.hero-date{color:#f2dfc4}
+.sound-button,.next-button{
+  background:rgba(45,29,21,.58);
+  border:1px solid rgba(231,194,132,.88);
+  color:#f4dfba;
+  text-shadow:none;
+}
+.paper{
+  background:transparent!important;
+}
+.paper-card{
+  background:rgba(43,28,21,.78);
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(224,187,125,.82);
+  box-shadow:0 18px 55px rgba(20,10,5,.28);
+  color:#f2dfc4;
+}
+.paper-card:before{border-color:rgba(232,198,145,.42)}
+.quran,.poem,.intro,.family,.event-date,.detail,.venue,.muted{
+  font-family:Amiri,serif;
+  color:#f0dfc3;
+}
+.quran{color:#f3dfb9}
+.poem{color:#f0dfc3}
+.intro,h1,h2,.eyebrow{color:#e7c58d}
+.family{color:#f5e3c4}
+.names span{color:#edca91}
+.names b{color:#f0c77e}
+.event-date,.detail,.venue{color:#f0dfc3}
+.countdown div{
+  background:rgba(255,247,232,.10);
+  border-color:rgba(224,187,125,.75);
+}
+.countdown strong{color:#f0cc8b}
+.countdown small{color:#f0dfc3}
+.program{
+  border-block-color:rgba(224,187,125,.55);
+  color:#f0dfc3;
+}
+.guestbook{border-top-color:rgba(224,187,125,.55)}
+input,textarea{
+  background:rgba(255,248,235,.94);
+  border-color:#d9b477;
+  color:#493729;
+  font-family:Amiri,serif;
+}
+input::placeholder,textarea::placeholder{color:#8c7455}
+.gold-button{
+  background:linear-gradient(120deg,#b9955c,#f0d8ad,#c2a066);
+  color:#382719;
+  border-color:#e5c58e;
+  font-family:Amiri,serif;
+}
+.petal{color:#d98b83}
+@media(max-width:600px){
+  body::before{background-position:48% center}
+  .screen{padding:25px 15px}
+  .paper-card{padding:28px 19px}
+  .cover-frame{min-height:70svh}
+  .blessing{font-size:30px}
+  .poem{font-size:19px}
+}
