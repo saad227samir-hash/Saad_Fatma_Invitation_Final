@@ -273,3 +273,10 @@ body::after{
   .next-button{margin-top:18px;}
   .paper-card{padding:28px 19px;}
 }
+body {
+  background-image: url("assets/couple-background.jpg") !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #4a342b !important;
+  }
