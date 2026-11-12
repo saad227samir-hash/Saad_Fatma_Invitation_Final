@@ -166,14 +166,110 @@ input::placeholder,textarea::placeholder{color:#8c7455}
   .blessing{font-size:30px}
   .poem{font-size:19px}
 }
-/* Background visibility correction */
-body::before {
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #4a342b !important;
-}
 
-body::after {
-  background: rgba(0, 0, 0, 0.08) !important;
-  }
+/* ===== Final refinement: clean white cover + full-screen couple photo ===== */
+:root{
+  --cream:#f5ecdf;
+  --paper:rgba(255,251,244,.68);
+  --gold:#c4a16a;
+  --gold-light:#ead8b7;
+  --ink:#292724;
+  --champagne:#d2b27a;
+}
+html,body{min-height:100%;}
+body{background:#d9c6ad;color:#4d4032;}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:url('assets/couple-background.jpg') center 48%/cover no-repeat;
+  filter:saturate(.96) brightness(1.02);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:rgba(255,248,236,.10);
+}
+.screen{min-height:100svh;padding:30px 18px;background:transparent!important;}
+/* Opening page: pure white invitation-card appearance */
+.cover{
+  background:#fff!important;
+  color:#4b3d2c;
+}
+.cover-frame{
+  width:min(570px,100%);min-height:76svh;
+  padding:clamp(28px,7vw,58px) 24px;
+  background:#fff;
+  border:1px solid #d7c29a;
+  outline:1px solid #eee4d2;outline-offset:7px;
+  box-shadow:0 12px 45px rgba(92,70,39,.07);
+  position:relative;
+}
+.cover-frame::before,.cover-frame::after{
+  content:"✧  ❧  ✧";position:absolute;left:0;right:0;
+  color:#c5a36a;font:22px Amiri,serif;letter-spacing:8px;
+}
+.cover-frame::before{top:17px;}
+.cover-frame::after{bottom:17px;}
+.sparkle{font-size:25px;color:#c5a36a;margin-bottom:25px;}
+.cover .basmala{color:#8c7047;font-size:clamp(27px,5vw,39px);margin-bottom:20px;}
+.cover-caption{font:clamp(21px,3.2vw,27px) Amiri,serif;color:#806b50;margin:8px 0 0;}
+.cover .gold-button{margin-top:32px;}
+/* The couple photograph remains behind every invitation page, full viewport */
+.hero{position:relative;min-height:100svh;background:transparent!important;color:#fff;text-align:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(39,27,20,.12),rgba(39,27,20,.06) 46%,rgba(39,27,20,.22))!important;}
+.hero-content{width:min(920px,100%);padding:32px 14px;text-shadow:0 2px 12px rgba(35,22,14,.65);}
+.blessing{color:#fff5df;text-shadow:0 2px 10px rgba(35,22,14,.62);}
+.duaa{color:#fffaf1;text-shadow:0 2px 9px rgba(35,22,14,.72);}
+.couple span{color:#292724;text-shadow:0 1px 2px rgba(255,255,255,.9);}
+.couple b{color:#e2c184;text-shadow:0 2px 8px rgba(44,29,16,.5);}
+.hero-date{color:#fff7e8;text-shadow:0 2px 8px rgba(35,22,14,.7);}
+/* Centered continue control with a clear down arrow */
+.next-button{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;margin:22px auto 0;padding:10px 26px;
+  min-width:160px;border:1px solid rgba(238,215,174,.95);
+  border-radius:30px;background:rgba(255,250,240,.78);
+  color:#725832;font:600 16px Cairo,sans-serif;text-shadow:none;
+}
+.next-label{display:block;}
+.down-arrow{display:block;font:26px/1 Cairo,sans-serif;animation:arrow-bob 1.7s ease-in-out infinite;}
+@keyframes arrow-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+/* Keep the photograph visible through the other pages */
+.paper{background:rgba(255,249,239,.08)!important;}
+.paper-card{
+  background:rgba(255,251,244,.78)!important;
+  backdrop-filter:blur(2px);
+  border:1px solid rgba(208,180,132,.92);
+  box-shadow:0 18px 55px rgba(55,38,22,.16);
+  color:#514331;
+}
+.paper-card:before{border-color:rgba(197,163,106,.5);}
+.quran{color:#62513a;}
+.poem{color:#705c43;}
+.intro,h1,h2,.eyebrow{color:#987746;}
+.family,.names span{color:#292724;}
+.names b{color:#c5a36a;}
+.event-date,.detail,.venue{color:#66543b;}
+.muted{color:#806f58;}
+.countdown div{background:rgba(255,253,248,.82);border-color:#d8c39d;}
+.countdown strong{color:#94713e;}
+.program{color:#6d5b46;border-block-color:#e5d7bf;}
+.guestbook{border-top-color:#e5d7bf;}
+.form-status{min-height:1.5em;margin:8px 0 0;color:#8a7049;font:16px Amiri,serif;}
+/* Softer champagne botanical confetti, less busy than large falling flowers */
+.petals{z-index:5;}
+.petal{
+  color:#d9bd8b;opacity:.35;
+  text-shadow:0 1px 4px rgba(255,255,255,.75);
+  animation:fall linear forwards;
+}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(300deg);opacity:.04}}
+@media(max-width:600px){
+  body::before{background-position:center 48%;}
+  .screen{padding:22px 14px;}
+  .cover-frame{min-height:72svh;padding:42px 20px;}
+  .hero{min-height:100svh;}
+  .hero-content{padding:24px 10px;}
+  .blessing{font-size:30px;}
+  .duaa{font-size:17px;line-height:1.8;}
+  .next-button{margin-top:18px;}
+  .paper-card{padding:28px 19px;}
+}
