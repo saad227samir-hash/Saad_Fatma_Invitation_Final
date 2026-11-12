@@ -166,3 +166,14 @@ input::placeholder,textarea::placeholder{color:#8c7455}
   .blessing{font-size:30px}
   .poem{font-size:19px}
 }
+/* Background visibility correction */
+body::before {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #4a342b !important;
+}
+
+body::after {
+  background: rgba(0, 0, 0, 0.08) !important;
+  }
